@@ -7,6 +7,8 @@ authors = ["Fedorov <atiliogoulart@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 Flask = "^2.0.1"
+gerencianet = "^2.0.0"
+credentials = "^1.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
