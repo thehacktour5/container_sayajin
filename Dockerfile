@@ -1,17 +1,12 @@
-# set base image (host OS)
-FROM python:3.8
+FROM ubuntu:16.04
 
-# set the working directory in the container
-WORKDIR /code
+RUN apt-get update -y && \
+    apt-get install -y python-pip python-dev
 
-# copy the dependencies file to the working directory
-COPY requirements.txt .
+WORKDIR /app
 
-# install dependencies
-RUN pip install -r requirements.txt
+COPY . /app
 
-# copy the content of the local src directory to the working directory
-COPY app/ .
+ENTRYPOINT [ "python" ]
 
-# command to run on container start
-CMD [ "python", "./app.py" ]
+CMD [ "app.py" ]
